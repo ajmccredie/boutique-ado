@@ -32,8 +32,6 @@ def checkout(request):
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
 
- #   intent = None
-
     if request.method == 'POST':
         bag = request.session.get('bag', {})
 
@@ -99,6 +97,9 @@ def checkout(request):
         )
 
         order_form = OrderForm()
+
+        client_secret = intent.client_secret if intent else ""
+        request.session['client_secret'] = client_secret
 
     if not stripe_public_key:
         messages.warning(request, 'Stripe public key is missing. \
