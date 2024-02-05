@@ -29,7 +29,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = 'DEVELOPMENT' in os.environ
 
-ALLOWED_HOSTS = ['boutique-ado-aj.herokuapp.com']
+ALLOWED_HOSTS = ['boutique-ado-aj-e68790932576.herokuapp.com']
 # ALLOWED_HOSTS = ['8000-ajmccredie-boutiqueado-jf1tqa4hku1.ws-eu107.gitpod.io']
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
@@ -177,9 +177,6 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
-
-# Add this line for STATIC_ROOT
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
